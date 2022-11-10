@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { NavBar, NotesWindow, Footer} from './components'
+import { Link, Route } from 'wouter'
 import "./global.css"
 
 
