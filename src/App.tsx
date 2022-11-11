@@ -9,8 +9,13 @@ function App() {
 
   return (
     <div className="App">
+      
       <NavBar />
-      <NotesWindow />
+      <Route path="/" ></Route>
+      <Route path="/about" ></Route>
+      <Route path="/:name" ></Route>
+      <Route path="/:name/:partner" ></Route>
+      {/* <NotesWindow /> */}
       <Footer />
     </div>
   )
