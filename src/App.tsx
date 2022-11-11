@@ -12,18 +12,16 @@ function App() {
     <div>
 
       <NavBar>
-        <div id="nav-bar" className="flex justify-between">
-          <NavTitle to="/">Bug Notes</NavTitle>
-          <div id="nav-links" className="flex gap-8">
-            <NavItem to="/profile">Profile</NavItem>
-            <NavItem to="/notes">Notes</NavItem>
-          </div>
-        </div>
+        <NavTitle to="/">Bug Notes</NavTitle>
+        <ul id="nav-links" className="flex gap-6 lg:gap-12 max-w-screen-xl">
+          <NavItem to="/profile">Profile</NavItem>
+          <NavItem to="/notes">Notes</NavItem>
+        </ul>
       </NavBar>
 
-      <Route path="/">Home</Route>
-      <Route path="/profile">Profile</Route>
-      <Route path="/notes">Notes</Route>
+      <Route path="/"><NotesWindow/></Route>
+      {/* <Route path="/profile"><ProfileWindow/></Route> */}
+      <Route path="/notes"><NotesWindow/></Route>
       
       <Footer />
     </div>
