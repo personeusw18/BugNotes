@@ -8,7 +8,7 @@ interface NotesWindowPropTypes {
 export function NotesWindow (props: NotesWindowPropTypes) {
 
   return (
-    <div className="flex flex-row p-0 align-middle">
+    <div>
       { props.notes.map(note => (
         <NoteContainer note={note}/>
       ))}

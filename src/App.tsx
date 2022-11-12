@@ -32,9 +32,11 @@ function App() {
         </ul>
       </NavBar>
 
-      <div id="page-content" className="m-0 p-0 box-border overflow-y-visible">
+      <div id="page-content" className="m-0 p-0 box-border">
         <Route path="/">
-          <NotesWindow notes={notesArray}/>
+          <div className='absolute'>
+            <NotesWindow notes={notesArray}/>
+          </div>
         </Route>
         <Route path="/profile"><ProfileWindow/></Route>
         <Route path="/notes"><NotesWindow notes={notesArray} /></Route>
