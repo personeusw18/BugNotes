@@ -17,8 +17,7 @@ function App() {
   }
 
   return (
-    <div>
-
+    <>
       <NavBar>
         <ul id="icon-title" className="flex flex-row gap-8">
           <BiBug className="text-gray-300 mt-2 lg:mt-3 scale-[2] lg:scale-[2.5] rotate-12 hover:text-gray-400 hover:cursor-pointer"/>
@@ -32,9 +31,9 @@ function App() {
         </ul>
       </NavBar>
 
-      <div id="page-content" className="m-0 p-0 box-border">
+      <div id="page-content" className="m-0 p-0 box-border h-full flex-1">
         <Route path="/">
-          <div className='absolute'>
+          <div>
             <NotesWindow notes={notesArray}/>
           </div>
         </Route>
@@ -43,7 +42,7 @@ function App() {
       </div>
 
       <Footer />
-    </div>
+    </>
   )
 }
 

@@ -8,7 +8,7 @@ interface NotesWindowPropTypes {
 export function NotesWindow (props: NotesWindowPropTypes) {
 
   return (
-    <div>
+    <div className='relative h-full'>
       { props.notes.map(note => (
         <NoteContainer note={note}/>
       ))}
