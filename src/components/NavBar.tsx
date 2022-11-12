@@ -19,7 +19,7 @@ interface NavItemProps {
 
 function NavBar (props: NavBarProps) {
   return (
-    <nav id="navbar" className="bg-slate-900 flex h-24 justify-between items-center pl-8 md:pl-16 lg:pl-20 pr-8 md:pr-16 lg:pr-20">
+    <nav id="navbar" className="shadow-xl bg-slate-900 flex h-24 justify-between items-center pl-8 md:pl-16 lg:pl-20 pr-8 md:pr-16 lg:pr-20">
       { props.children }
     </nav>
   )
@@ -27,7 +27,8 @@ function NavBar (props: NavBarProps) {
 
 function NavTitle(props: NavTitleProps) {
   return (
-    <div className="text-3xl  lg:text-5xl font-cursive text-gray-300 hover:text-gray-400">
+    <div className="text-3xl  lg:text-5xl font-cursive text-gray-300 hover:text-gray-400 relative group">
+      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-400 transition-all group-hover:w-full"></span>
       <Link href={props.to}>{props.children}</Link>
     </div>
   )
@@ -35,7 +36,8 @@ function NavTitle(props: NavTitleProps) {
 
 function NavItem (props: NavItemProps) {
   return (
-    <li className="font-cursive text-gray-300 text-xl lg:text-3xl underline hover:text-gray-400">
+    <li className="font-cursive text-gray-300 text-xl lg:text-3xl hover:text-gray-400 relative group">
+      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-400 transition-all group-hover:w-full"></span>
       <Link href={props.to}>{props.children}</Link>
     </li>
   )

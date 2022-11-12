@@ -3,6 +3,9 @@ import { NotesWindow, Footer} from './components'
 import { NavBar, NavTitle, NavItem } from './components/NavBar' 
 import { Link, Route } from 'wouter'
 import "./global.css"
+import { ProfileWindow } from './components/ProfileWindow'
+import { GiQuill } from "react-icons/gi"
+import { BiBug } from "react-icons/bi"
 
 
 function App() {
@@ -12,17 +15,26 @@ function App() {
     <div>
 
       <NavBar>
-        <NavTitle to="/">Bug Notes</NavTitle>
+        <ul id="icon-title" className="flex flex-row gap-8">
+          <BiBug className="text-gray-300 mt-2 lg:mt-3 scale-[2] lg:scale-[2.5] rotate-12 hover:text-gray-400 hover:cursor-pointer"/>
+          <NavTitle to="/">Bug Notes</NavTitle>
+        </ul>
         <ul id="nav-links" className="flex gap-6 lg:gap-12 max-w-screen-xl">
+          <NavItem to="/"></NavItem>
+          <GiQuill className="mt-2 text-gray-300 scale-[2] lg:scale-[2.5] rotate-12 hover:text-gray-400 hover:cursor-pointer"/>
           <NavItem to="/profile">Profile</NavItem>
           <NavItem to="/notes">Notes</NavItem>
         </ul>
       </NavBar>
 
-      <Route path="/"><NotesWindow/></Route>
-      {/* <Route path="/profile"><ProfileWindow/></Route> */}
-      <Route path="/notes"><NotesWindow/></Route>
-      
+      <div id="page-content" className="m-0 p-0 box-border overflow-y-visible">
+        <Route path="/">
+          <NotesWindow/>
+        </Route>
+        <Route path="/profile"><ProfileWindow/></Route>
+        <Route path="/notes"><NotesWindow/></Route>
+      </div>
+
       <Footer />
     </div>
   )

@@ -9,8 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         cursive: ['Cedarville Cursive']
-      }
-
+      },
     },
   },
   plugins: [],
