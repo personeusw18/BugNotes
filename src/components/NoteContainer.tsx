@@ -36,7 +36,7 @@ export function NoteContainer (props: NotePropTypes) {
       >
         <div id="pin">
           <div className="absolute left-[calc(50%-13px)] -top-8 w-6 h-6 rounded-full bg-gradient-to-tr from-rose-900 to-rose-600 outline-1 outline-zinc-800"/>
-          <div className="absolute left-[calc(50%-3px)] top-[13.5px] w-1 h-1 rounded-full opacity-25 bg-zinc-700 outline-zinc-800"/>
+          <div className="absolute left-[calc(50%-4px)] top-[12px] w-1.5 h-1.5 rounded-full opacity-25 bg-zinc-700 outline-zinc-800"/>
           <div className="absolute left-[calc(50%-2px)] w-0.5 h-6 -top-2 bg-gradient-to-r from-zinc-600 to-zinc-500 rounded-b-full"/>
 
         </div>
