@@ -6,10 +6,15 @@ import "./global.css"
 import { ProfileWindow } from './components/ProfileWindow'
 import { GiQuill } from "react-icons/gi"
 import { BiBug } from "react-icons/bi"
+import { Note } from "./components/NoteContainer"
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [notesArray, setNotesArray] = useState<Note[]>([])
+
+  const handleWriteClick: React.MouseEventHandler<SVGElement> = (e) => {
+    setNotesArray([...notesArray, {name: "", message: ""}])
+  }
 
   return (
     <div>
@@ -21,7 +26,7 @@ function App() {
         </ul>
         <ul id="nav-links" className="flex gap-6 lg:gap-12 max-w-screen-xl">
           <NavItem to="/"></NavItem>
-          <GiQuill className="mt-2 text-gray-300 scale-[2] lg:scale-[2.5] rotate-12 hover:text-gray-400 hover:cursor-pointer"/>
+          <GiQuill onClick={handleWriteClick} className="mt-2 text-gray-300 scale-[2] lg:scale-[2.5] rotate-12 hover:text-gray-400 hover:cursor-pointer"/>
           <NavItem to="/profile">Profile</NavItem>
           <NavItem to="/notes">Notes</NavItem>
         </ul>
@@ -29,10 +34,10 @@ function App() {
 
       <div id="page-content" className="m-0 p-0 box-border overflow-y-visible">
         <Route path="/">
-          <NotesWindow/>
+          <NotesWindow notes={notesArray}/>
         </Route>
         <Route path="/profile"><ProfileWindow/></Route>
-        <Route path="/notes"><NotesWindow/></Route>
+        <Route path="/notes"><NotesWindow notes={notesArray} /></Route>
       </div>
 
       <Footer />
