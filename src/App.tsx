@@ -1,16 +1,31 @@
 import { useState } from 'react'
+import "./global.css"
+
 import { NotesWindow, Footer} from './components'
 import { NavBar, NavTitle, NavItem } from './components/NavBar' 
-import { Link, Route } from 'wouter'
-import "./global.css"
 import { ProfileWindow } from './components/ProfileWindow'
-import { GiQuill } from "react-icons/gi"
-import { BiBug } from "react-icons/bi"
 import { Note } from "./components/NoteContainer"
 
+import { Link, Route } from 'wouter'
+
+import { GiQuill } from "react-icons/gi"
+import { BiBug } from "react-icons/bi"
+
+import firebase from 'firebase/compat/app'
+import 'firebase/compat/firestore'
+import 'firebase/compat/auth'
+import { firebaseConfig } from './config/config'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { useCollectionData } from 'react-firebase-hooks/firestore'
+
+// firebase.initializeApp({ firebaseConfig })
+
+// const auth = firebase.auth()
+// const firestore = firebase.firestore()
 
 function App() {
   const [notesArray, setNotesArray] = useState<Note[]>([])
+  // const [user] = useAuthState(auth);
 
   const handleWriteClick: React.MouseEventHandler<SVGElement> = (e) => {
     setNotesArray([...notesArray, {name: "", message: ""}])
@@ -33,9 +48,7 @@ function App() {
 
       <div id="page-content" className="m-0 p-0 box-border h-full flex-1">
         <Route path="/">
-          <div>
-            <NotesWindow notes={notesArray}/>
-          </div>
+          <NotesWindow notes={notesArray}/>
         </Route>
         <Route path="/profile"><ProfileWindow/></Route>
         <Route path="/notes"><NotesWindow notes={notesArray} /></Route>
@@ -47,3 +60,7 @@ function App() {
 }
 
 export default App
+// function initializeApp(firebaseConfig: { firebase: { apiKey: string | undefined; authDomain: string | undefined; databaseURL: string | undefined; projectId: string | undefined; storageBucket: string | undefined; messagingSenderId: string | undefined; appId: string | undefined; measurementId: string | undefined } }) {
+//   throw new Error('Function not implemented.')
+// }
+
