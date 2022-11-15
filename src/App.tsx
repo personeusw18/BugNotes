@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import "./global.css"
 
 import { NotesWindow, Footer} from './components'
@@ -11,25 +11,29 @@ import { Link, Route } from 'wouter'
 import { GiQuill } from "react-icons/gi"
 import { BiBug } from "react-icons/bi"
 
-import firebase from 'firebase/compat/app'
-import 'firebase/compat/firestore'
-import 'firebase/compat/auth'
-import { firebaseConfig } from './config/config'
-import { useAuthState } from 'react-firebase-hooks/auth'
-import { useCollectionData } from 'react-firebase-hooks/firestore'
-
-// firebase.initializeApp({ firebaseConfig })
-
-// const auth = firebase.auth()
-// const firestore = firebase.firestore()
+import { db } from './config/config'
+import { collection, getDocs } from '@firebase/firestore'
 
 function App() {
+
   const [notesArray, setNotesArray] = useState<Note[]>([])
-  // const [user] = useAuthState(auth);
 
   const handleWriteClick: React.MouseEventHandler<SVGElement> = (e) => {
     setNotesArray([...notesArray, {name: "", message: ""}])
   }
+
+  const [users, setUsers] = useState([])
+  const usersCollectionRef = collection(db, "users")
+
+  useEffect(() => {
+    const getUsers = async () => {
+      const data = await getDocs(usersCollectionRef)
+      console.log(data)
+    }
+
+    getUsers()
+  
+  }, [])
 
   return (
     <>
@@ -60,7 +64,4 @@ function App() {
 }
 
 export default App
-// function initializeApp(firebaseConfig: { firebase: { apiKey: string | undefined; authDomain: string | undefined; databaseURL: string | undefined; projectId: string | undefined; storageBucket: string | undefined; messagingSenderId: string | undefined; appId: string | undefined; measurementId: string | undefined } }) {
-//   throw new Error('Function not implemented.')
-// }
 
