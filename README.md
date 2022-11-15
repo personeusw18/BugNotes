@@ -21,6 +21,6 @@
 4. Click on the Quill icon to create a message
 5. Invite other users to your board
 
-# Credits:
+## Credits:
 ### Made by Wolfgang Personeus - November 2022
 ### for Bailey <3
