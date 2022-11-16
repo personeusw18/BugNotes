@@ -5,6 +5,8 @@ import { NotesWindow, Footer} from './components'
 import { NavBar, NavTitle, NavItem } from './components/NavBar' 
 import { ProfileWindow } from './components/ProfileWindow'
 import { Note } from "./components/NoteContainer"
+import { Login } from "./components/LoginWindow"
+import { SingUp } from "./components/SignUpWindow"
 
 import { Link, Route } from 'wouter'
 
@@ -45,17 +47,31 @@ function App() {
         <ul id="nav-links" className="flex gap-6 lg:gap-12 max-w-screen-xl">
           <NavItem to="/"></NavItem>
           <GiQuill onClick={handleWriteClick} className="mt-2 text-gray-300 scale-[2] lg:scale-[2.5] rotate-12 hover:text-gray-400 hover:cursor-pointer"/>
-          <NavItem to="/profile">Profile</NavItem>
           <NavItem to="/notes">Notes</NavItem>
+          <NavItem to="/profile">Profile</NavItem>
+          
         </ul>
       </NavBar>
 
       <div id="page-content" className="m-0 p-0 box-border h-full flex-1">
+
         <Route path="/">
-          <NotesWindow notes={notesArray}/>
+          <Login/>
         </Route>
-        <Route path="/profile"><ProfileWindow/></Route>
-        <Route path="/notes"><NotesWindow notes={notesArray} /></Route>
+
+        <Route path="/signup">
+          <SingUp/>
+        </Route>      
+
+        <Route path="/profile">
+          <ProfileWindow/>
+        </Route>
+
+        <Route path="/notes">
+          <NotesWindow notes={notesArray} />
+        </Route>
+
+
       </div>
 
       <Footer />
