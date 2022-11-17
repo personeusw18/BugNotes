@@ -35,8 +35,10 @@ export function SingUp () {
         />
         <button className="bg-[#e6e5d9] w-3/4 mx-auto mt-4 p-2 rounded-md hover:outline-dashed hover:outline-2 hover:outline-zinc-300 focus:outline-dashed focus:outline-2 focus:outline-zinc-400">Sign Up</button>
         <div className="w-full h-0.5 mt-4 bg-zinc-400 opacity-25"/>
-        <p className="text-zinc-900 hover:text-gray-400 mt-2">
-          <Link className="group" href="/login">Already have an account?<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-400 transition-all group-hover:w-full"></span></Link></p>
+        <p className="text-zinc-900 hover:text-gray-400 mt-2 group">
+          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-400 transition-all group-hover:w-full"></span>
+          <Link className="group" href="/login">Already have an account?</Link>
+        </p>
       </form>
   )
 }

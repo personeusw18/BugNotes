@@ -7,6 +7,7 @@ import { ProfileWindow } from './components/ProfileWindow'
 import { Note } from "./components/NoteContainer"
 import { Login } from "./components/LoginWindow"
 import { SingUp } from "./components/SignUpWindow"
+import { Home } from './components/HomeWindow'
 
 import { Link, Route } from 'wouter'
 
@@ -56,7 +57,7 @@ function App() {
       <div id="page-content" className="m-0 p-0 box-border h-full flex-1">
 
         <Route path="/">
-          <Login/>
+          <Home/>
         </Route>
 
         <Route path="/signup">
