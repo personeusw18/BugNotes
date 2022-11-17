@@ -6,7 +6,7 @@ export function Login () {
 
       
 
-      <form className="flex flex-col gap-2 h-3/4 w-1/2 bg-yellow-50 m-auto text-center p-16 mt-4 shadow-lg border-zinc-400 border-opacity-25 border-2 font-cursive text-2xl text-zinc-900 min-w-[300px] min-h-[525px]">
+      <form className="flex flex-col gap-2 h-3/4 w-5/6 sm:w-2/3 md:w-1/2 bg-yellow-50 m-auto text-center p-16 mt-4 shadow-lg border-zinc-400 border-opacity-25 border-2 font-cursive text-2xl text-zinc-900 min-w-[300px] min-h-[525px]">
 
         <div id="pin">
           <div className="absolute left-[calc(30%-13px)] top-[128px] w-6 h-6 rounded-full bg-gradient-to-tr from-rose-900 to-rose-600 outline-1 outline-zinc-800"/>
