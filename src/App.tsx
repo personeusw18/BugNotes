@@ -61,7 +61,11 @@ function App() {
 
         <Route path="/signup">
           <SingUp/>
-        </Route>      
+        </Route>    
+
+        <Route path="/login">
+          <Login/>
+        </Route>  
 
         <Route path="/profile">
           <ProfileWindow/>

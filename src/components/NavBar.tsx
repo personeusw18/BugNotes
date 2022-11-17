@@ -19,7 +19,7 @@ interface NavItemProps {
 
 function NavBar (props: NavBarProps) {
   return (
-    <nav id="navbar" className="shadow-xl bg-slate-900 flex h-24 justify-between items-center pl-8 md:pl-16 lg:pl-20 pr-8 md:pr-16 lg:pr-20">
+    <nav id="navbar" className="shadow-xl bg-slate-900 flex h-24 min-h-[6rem] justify-between items-center pl-8 md:pl-16 lg:pl-20 pr-8 md:pr-16 lg:pr-20">
       { props.children }
     </nav>
   )

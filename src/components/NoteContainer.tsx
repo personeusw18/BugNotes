@@ -45,8 +45,8 @@ export function NoteContainer (props: NotePropTypes) {
           spellCheck={false}
           maxLength={256}
           style={{height: noteMessageHeight}}
-          className="bg-yellow-50 box-border text-zinc-900 placeholder-zinc-900 focus:outline-none overflow-auto
-            focus:border-zinc-400 focus:outline-dashed focus:outline-2 focus:outline-zinc-300 min-h-[2rem] resize-none" 
+          className="bg-yellow-50 text-zinc-900 placeholder-zinc-900 focus:outline-none overflow-auto
+            focus:outline-dashed focus:outline-2 focus:outline-zinc-400 min-h-[2rem] resize-none rounded-md hover:outline-dashed hover:outline-2 hover:outline-zinc-300" 
           value={noteMessage}/>
 
         <div id="name-div" className="flex w-fit pt-2">
@@ -56,8 +56,8 @@ export function NoteContainer (props: NotePropTypes) {
             maxLength={16}
             spellCheck={false}
             onChange={handleMessageNote} 
-            className="bg-yellow-50 text-zinc-900 placeholder-zinc-900 focus:outline-none 
-            focus:outline-dashed focus:outline-2 focus:outline-zinc-300" 
+            className="bg-yellow-50 text-zinc-900 placeholder-zinc-900  
+            focus:outline-dashed focus:outline-2 focus:outline-zinc-400 rounded-md hover:outline-dashed hover:outline-2 hover:outline-zinc-300" 
             type="text" 
             value={noteName}/>
             
